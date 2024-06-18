@@ -1,0 +1,57 @@
+def is_leap_year(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+def day_of_year(day, month, year):
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if is_leap_year(year):
+        days_in_month[1] = 29
+    day_of_year = sum(days_in_month[:month-1]) + day
+    return day_of_year
+
+day = int(input("enter day: "))
+month = int(input("enter month: "))
+year = int(input("enter year: "))
+
+result = day_of_year(day, month, year)
+print("That day ", result)
+
+
+
+
+def process_numbers(input_string):
+    try:
+        numbers = list(map(float, input_string.split()))
+    except ValueError:
+        print("Please enter valid real numbers.")
+        return None
+    if not numbers: return (0, [])
+    avg = sum(numbers) / len(numbers)
+    gta = [num for num in numbers if num > avg]
+    return (avg, gta)
+
+input_string = input("Enter real numbers, separated by spaces: ")
+result = process_numbers(input_string)
+if result: print(result)
+
+def bubbleSort(arr):
+    n = len(arr)
+
+
+    for i in range(n):
+
+
+        for j in range(0, n - i - 1):
+
+
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+
+arr = [64, 34, 25, 12]
+
+bubbleSort(arr)
+
+print("Sorted array is:")
+for i in range(len(arr)):
+print("%d" % arr[i])
+
+
