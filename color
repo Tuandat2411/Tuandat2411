@@ -1,0 +1,31 @@
+
+#include "ros/ros.h"
+ 
+int main(int argc, char *argv[]){
+    setlocale(LC_ALL,"");
+    ros::init(argc,argv,"background");
+    ros::NodeHandle n;
+    ros::param::set("/turtlesim/background_r",0);
+    ros::param::set("/turtlesim/background_b",0);
+    ros::param::set("/turtlesim/background_g",255);
+ 
+    return 0;
+}
+
+#include "ros/ros.h"
+ 
+int main(int argc, char *argv[]){
+    setlocale(LC_ALL,"");
+    ros::init(argc,argv,"background");
+    ros::NodeHandle n("turtlesim");//naming_name;
+    //ros::param::set("/turtlesim/background_r",0);
+    //ros::param::set("/turtlesim/background_b",0);
+    //ros::param::set("/turtlesim/background_g",255);
+    n.setParam("background_r",255);
+    n.setParam("background_r",255);
+    n.setParam("background_r",255);
+ 
+    return 0;
+}
+
+
