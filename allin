@@ -1,0 +1,33 @@
+
+roscore 
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+rosrun rqt_service_caller rqt_service_caller
+ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0,0.0,0.0]' '[0.0,0.0,1.8]'
+
+
+cd  ~/catkin_ws/
+catkin_make
+source devel/setup.bash
+rosrun my_turtle_package yuan
+
+cd ~/turtle_ws
+catkin_make
+source devel/setup.bash
+rosrun turtle turtle
+
+
+cd ~/turtle_color
+catkin_make
+source devel/setup.bash
+rosrun turtle turtle
+
+cd ~/turtle_color1
+catkin_make
+source devel/setup.bash
+rosrun turtle turtle
+
+cd ~/helloworld_ws
+catkin_make
+source devel/setup.bash
+rosrun helloworld hello
