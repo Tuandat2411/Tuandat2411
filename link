@@ -1,1 +1,3 @@
 https://github.com/guyuehome/ros_21_tutorials/tree/master/learning_service/src
+
+catkin_create_pkg learning_parameter roscpp rospy std_srvs
